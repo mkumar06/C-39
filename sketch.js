@@ -1,4 +1,4 @@
-var game, form, player, db, gameState, playerCount;
+var game, form, player, allPlayers, db, gameState, playerCount;
 
 gameState = 0;
 
@@ -13,5 +13,11 @@ function setup(){
 }
 
 function draw() {
-   
+   if(playerCount === 4) {
+       game.updateState(1);
+   }
+   if(gameState === 1) {
+       clear();
+       game.play();
+   }
 }
