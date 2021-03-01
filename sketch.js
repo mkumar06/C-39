@@ -1,6 +1,7 @@
 var game, form, player, allPlayers, db, gameState, playerCount;
 var car1, car2, car3, car4, cars;
 var car1Image, car2Image, car3Image, car4Image, groundImage, trackImage;
+var refresh;
 
 gameState = 0;
 

@@ -53,7 +53,9 @@ class Game {
                 cars[index - 1].x = x;
                 cars[index - 1].y = y;
                 if(index === player.index) {
-                    cars[index - 1].shapeColor = "red";
+                    rectMode(CENTER);
+                    fill("orange");
+                    rect(x, y, 100, 100);
                     camera.position.x = displayWidth/2;
                     camera.position.y = cars[index - 1].y;
                 }
