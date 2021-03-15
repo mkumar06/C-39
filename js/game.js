@@ -40,15 +40,17 @@ class Game {
         form.hide();
         Player.getPlayerInfo();
 
+        player.getCarsAtEnd();
+
         if(allPlayers!== undefined) {
-            var index = 0, x = 275, y;
+            var index = 0, x = 140, y;
             
             background(groundImage);
             image(trackImage, 0, - displayHeight * 4, displayWidth, displayHeight * 5);
             
             for(var plr in allPlayers) {
                 index = index + 1;
-                x = x + 280;
+                x = x + 200;
                 y = displayHeight - allPlayers[plr].distance;
                 cars[index - 1].x = x;
                 cars[index - 1].y = y;
@@ -72,9 +74,21 @@ class Game {
 
         if(player.distance >= displayHeight * 5) {
             gameState = 2;
+            player.rank = player.rank + 1;
+            Player.updateCarsAtEnd(player.rank);
         }
     }
     end() {
-        console.log("game.end");
+        clear(); 
+        var x = 200;
+        var y = displayHeight - player.distance;
+        for(var plr in allPlayers) {
+            y = y + 50;
+            if(index === player.index) {
+                fill("orange");
+                textSize(30);
+                text("Player's Rank: " + allPlayers[plr].name + " - " + allPlayers[plr.rank])
+            }
+        }
     }
 }

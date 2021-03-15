@@ -38,6 +38,7 @@ class Form {
             ()=> {
             playerCount = 0;
             player.updateCount(playerCount);
+            Player.updateCarsAtEnd(0);
             game.updateState(0);
             location.reload(); 
             }
